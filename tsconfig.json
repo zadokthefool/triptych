@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", // Use the latest target from the provided configs
+    "lib": ["ES2023", "DOM", "DOM.Iterable"], // Combine libraries from all configs
+    "module": "ESNext", // ESNext for latest features and bundler compatibility
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "moduleResolution": "bundler", // Bundler mode for module resolution
+    "allowImportingTsExtensions": true, // Allow importing TypeScript files with .ts extensions
+    "isolatedModules": true, // Ensure that each file can be safely transpiled independently
+    "moduleDetection": "force", // Force module detection mode
+    "jsx": "react-jsx", // JSX mode for React 17 and newer
+    "strict": true, // Enable all strict type-checking options
+    "noUnusedLocals": true, // Report errors on unused local variables
+    "noUnusedParameters": true, // Report errors on unused function parameters
+    "noFallthroughCasesInSwitch": true, // Prevent fallthrough between switch cases
+    "composite": true, // Required for project references
+    "emitDeclarationOnly": true, // Only emit declaration files (for projects with references)
+    "outDir": "./dist", // Output directory for compiled files
+    "baseUrl": ".", // Base directory for resolving non-relative module names
+    "paths": {
+      // Modules
+      "@home/*": ["src/modules/home/*"],
+      "@home": ["src/modules/home/"],
+      "@data/*": ["src/modules/data/*"],
+      "@data": ["src/modules/data/"],
+      // Globals
+      "@components/*": ["src/global/components/*"],
+      "@components": ["src/global/components/"],
+      "@constants/*": ["src/global/constants/*"],
+      "@constants": ["src/global/constants/"],
+      "@routes/*": ["src/global/routes/*"],
+      "@routes": ["src/global/routes/"],
+      "@utils/*": ["src/global/utils/*"],
+      "@utils": ["src/global/utils/"],
+      "@styles/*": ["src/global/styles/*"],
+      "@styles": ["src/global/styles/"]
+    }
+  },
+  "include": [
+    "src", // Include all source files
+    "vite.config.ts", // Include the Vite configuration file
+    "src/modules/apps/reg-search/utils/.ts"
+  ],
+  "exclude": ["archive"]
+}
